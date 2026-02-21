@@ -18,7 +18,7 @@ Built with Go, Wails v2, React, and Tailwind CSS.
 
 OneSecCV is a desktop application that combines **AI generation** with **LaTeX precision** to produce publication-quality CVs in PDF format.
 
-You provide your information — either by importing an existing CV (PDF, DOCX, TXT) or filling in a structured form — and the AI engine rewrites and formats it into a polished LaTeX document, compiled instantly to PDF via MiKTeX.
+You provide your information - either by importing an existing CV (PDF, DOCX, TXT) or filling in a structured form — and the AI engine rewrites and formats it into a polished LaTeX document, compiled instantly to PDF via MiKTeX.
 
 No subscriptions. No cloud storage. No data sent to third parties except the AI provider for generation.
 
