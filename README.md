@@ -141,7 +141,7 @@ wails build
 
 ---
 
-## 🤖 CI/CD — GitHub Actions
+## 🤖 CI/CD - GitHub Actions
 
 Every push to `main` triggers `.github/workflows/build.yml`:
 
@@ -163,7 +163,7 @@ Every push to `main` triggers `.github/workflows/build.yml`:
 {"mytemplate.tex", "My Label", "mytemplate.png"},
 ```
 
-4. Rebuild — it appears automatically in the Templates tab
+4. Rebuild - it appears automatically in the Templates tab
 
 ---
 
@@ -191,7 +191,7 @@ Every push to `main` triggers `.github/workflows/build.yml`:
 
 ## 📄 License
 
-MIT License — see [LICENSE](LICENSE) for details.
+MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
