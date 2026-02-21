@@ -1,0 +1,143 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Christ Bowel Bouchuen} \\ \vspace{1pt}
+    \small 015210303081 $|$ \href{mailto:christbowel1337@gmail.com}{christbowel1337@gmail.com} $|$ 
+    \href{https://christbowel.com}{christbowel.com} $|$
+    \href{https://linkedin.com/in/christ-bowel-bouchuen-207a76251}{linkedin.com/in/christ-bowel-bouchuen} $|$
+    \href{https://github.com/christbowel}{github.com/christbowel}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading{Technische Universität Darmstadt}{Darmstadt, Germany}{B.Sc. Informatik}{Oct. 2025 -- Expected 2028}
+    \resumeSubheading{Technische Universität Clausthal}{Clausthal, Germany}{DSH2 Deutsche Sprachprüfung für den Hochschulzugang}{Mar. 2025 -- July 2025}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading{Independent Security Researcher \& CTF Player}{Remote}{HackerOne, Bugcrowd, Riseguard \& Balgo}{Feb. 2023 -- Present}
+    \resumeItemListStart
+        \resumeItem{Identified and documented 3 CVEs, including CVE-2024-29643 (Host Header Injection) and CVE-2026-25050 (Authentication Timing Attack).}
+        \resumeItem{Developed and published Proof-of-Concepts (PoCs) and Nuclei templates in Go and Python, officially adopted by ProjectDiscovery.}
+        \resumeItem{Contributed to the development of PoCs for high-profile vulnerabilities including OpenSSH 9.1 (CVE-2023-25136) and WordPress Bricks.}
+        \resumeItem{Ranked Top 15 out of 454 participants at the Bugcrowd BlackHat USA CTF 2024.}
+        \resumeItem{Discovered critical vulnerabilities such as SQL Injection leading to RCE (NT AUTHORITY\textbackslash{}SYSTEM) on government platforms and Account Takeovers.}
+    \resumeItemListEnd
+
+    \resumeSubheading{Freelance Penetration Tester}{Paris, France}{Cooperation with Fovu Security}{Nov. 2024 -- Dec. 2024}
+    \resumeItemListStart
+        \resumeItem{Executed comprehensive Black-Box and Gray-Box penetration tests for a FinTech organization.}
+        \resumeItem{Managed technical infrastructure setup, network configuration, and vulnerability analysis.}
+        \resumeItem{Developed detailed technical reports, management summaries, and presented findings to client stakeholders.}
+    \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{CipherBuster -- RSA Exploitation Framework} $|$ \emph{Python, Cryptography, Git}}{Feb. 2026}
+          \resumeItemListStart
+            \resumeItem{Developed a Python framework for the analysis and exploitation of weak RSA keys, implementing various factorization attacks and key detection algorithms.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Infiltrator -- Red Team Monitoring Framework} $|$ \emph{Go, Telegram API, Systems Programming}}{June 2025 -- Aug. 2025}
+          \resumeItemListStart
+            \resumeItem{Architected a security research tool in Go for capturing system inputs and screenshots with secure data exfiltration via Telegram Bot integration.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{CVE-2024-25600 Nuclei Template \& PoC} $|$ \emph{Go, YAML, Security Automation}}{2024}
+          \resumeItemListStart
+            \resumeItem{Developed and released an official Nuclei template for CVE-2024-25600 detection, merged into the ProjectDiscovery community repository.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, Go, C, Java, LaTeX, German (C1), English (Fluent), French (Native)} \\
+     \textbf{Developer Tools}{: Git, Linux, Windows, Burp Suite, Nmap, Metasploit, Wireshark, Nuclei, Ghidra, Frida} \\
+     \textbf{Specializations}{: Software Development, Vulnerability Research, Web/API Security, Active Directory, Network Analysis}
+    }}
+ \end{itemize}
+
+%-----------HONORS & AWARDS-----------
+\section{Awards \& Recognition}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading{\textbf{1. Place} $|$ usd Hacking Night (usd AG)}{Nov. 2025}
+    \resumeProjectHeading{\textbf{Hall of Fame} $|$ State of California, Bureau of Indian Affairs (BIA), RMIT University, Mars VDP}{2023 -- 2025}
+    \resumeProjectHeading{\textbf{Criminal IP API GitHub Reference} $|$ Recognized contributor}{2024}
+  \resumeSubHeadingListEnd
+
+\end{document}

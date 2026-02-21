@@ -1,0 +1,198 @@
+\documentclass[10pt, a4paper]{article}
+
+% --- PACKAGES ---
+\usepackage[left=1.2cm,right=1.2cm,top=1.2cm,bottom=1.2cm]{geometry}
+\usepackage[default]{lato}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{fontawesome}
+\usepackage{dashrule}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{multirow,tabularx}
+\usepackage{xparse}
+\usepackage{graphicx}
+
+% Couleurs
+\definecolor{VividPurple}{HTML}{2E64FE}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{555555}
+\definecolor{AzureRadiance}{HTML}{00ABFF}
+\definecolor{DodgerBlue}{HTML}{4F83FF}
+\definecolor{ElectricViolet}{HTML}{9F00FF}
+\definecolor{Black}{HTML}{000000}
+
+\colorlet{accent}{DodgerBlue}
+\colorlet{body}{Black!80}
+
+% Macros de contact
+\newcommand{\printinfo}[2]{\mbox{\textcolor{accent}{#1}\hspace{0.5em}#2\hspace{2em}}}
+\newcommand{\mailaddress}[1]{\printinfo{\faEnvelope}{#1}}
+\newcommand{\phone}[1]{\printinfo{\faPhone}{#1}}
+\newcommand{\location}[1]{\printinfo{\faMapMarker}{#1}}
+\newcommand{\linkedin}[1]{\printinfo{\faLinkedin}{#1}}
+\newcommand{\github}[1]{\printinfo{\faGithub}{#1}}
+\newcommand{\homepage}[1]{\printinfo{\faGlobe}{#1}}
+
+% Variables d'en-tête
+\makeatletter
+\newcommand{\name}[1]{\def\@name{#1}}
+\newcommand{\tagline}[1]{\def\@tagline{#1}}
+\newcommand{\personalinfo}[1]{\def\@personalinfo{#1}}
+
+\newcommand{\makecvheader}{%
+  \begingroup \centering
+    {\Large\bfseries\color{black}\textls[250]{\MakeUppercase{\@name}}\par}
+    \smallskip
+    {\normalsize\bfseries\color{accent}\textls[340]{\MakeUppercase{\@tagline}}\par}
+    \smallskip
+    {\centering\footnotesize\bfseries\@personalinfo\par}
+  \endgroup\smallskip
+}
+\makeatother
+
+% Sections et Dividers
+\setlength{\parindent}{0pt}
+\newcommand{\divider}{\medskip\textcolor{accent}{\hdashrule{\linewidth}{0.8pt}{0.5ex}}\bigskip}
+\newcommand{\dividergray}{\textcolor{body!50}{\hdashrule{\linewidth}{0.4pt}{0.5ex}}\smallskip}
+
+\newcommand{\cvsection}[1]{%
+  \bigskip%
+  {\color{accent}\small\bfseries\textls[250]{\MakeUppercase{#1}}}\\[-1ex]%
+  {\color{accent}\rule{\linewidth}{1.2pt}\par}\medskip
+}
+
+% Listes
+\newcommand{\itemmarker}{\color{accent}\small\textbullet}
+\newcommand{\dashedbullets}{\color{accent}\small\textendash}
+\setlist{leftmargin=*,labelsep=0.8em,nosep,itemsep=0.15\baselineskip,after=\vskip0.15\baselineskip,before=\vskip0.15\baselineskip}
+\setlist[itemize]{label=\itemmarker}
+
+% Expérience et Education
+\newcommand{\company}[4]{%
+\smallskip
+    {\small\color{body}\textls[140]{\textbf{\MakeUppercase{#1}}}} \hfill {\small\color{body}\textls[140]{\textbf{\MakeUppercase{#2}}}} \par
+    \smallskip
+    {\color{accent}\faMapMarker} \hspace{0.5em}{\color{body}{#3}} \hfill {\color{accent}\faCalendar} \hspace{0.5em}{\color{body}{#4}} \par
+    \smallskip
+}
+
+\newcommand{\project}[4]{%
+\smallskip
+    \textbf{Projet :} #1 \hfill \textbf{Client/Org :} #2\par\smallskip
+    \textbf{Rôle :} #3 \hfill \textbf{Technologies :} {#4}\par\smallskip
+    \textbf{Description \& Responsabilités :}\par\smallskip
+}
+
+\newcommand{\education}[4]{%
+\smallskip
+    {\small\color{body}\textls[140]{{\MakeUppercase{#1}}}} \\
+    {\small\textls[140]{{{#2}}}} \hfill {\color{accent}\faCalendar} \hspace{0.5em}{{#4}} \par
+}
+
+\newcommand{\cvachievement}[3]{%
+  \begin{tabularx}{\linewidth}{@{}p{2em} @{\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
+  \multirow{2}{*}{\Large\color{accent}#1} & {#2}\\
+  & #3
+  \end{tabularx}%
+  \smallskip
+}
+
+\pagestyle{empty}
+\color{body}
+
+\begin{document}
+
+
+
+\name{Christ Bowel Bouchuen} 
+\tagline{Étudiant en Informatique $\bullet$ Chercheur en Cybersécurité $\bullet$ Pentester} 
+\personalinfo{%
+    \mailaddress{christbowel1337@gmail.com}
+    \phone{015210303081}
+    \location{Darmstadt, Allemagne}
+    \linkedin{linkedin.com/in/christ-bowel-bouchuen-207a76251} \\
+    \homepage{christbowel.com}
+    \github{github.com/Christbowel}
+}
+
+\makecvheader
+\medskip
+
+\cvsection{Profil}
+\begin{itemize}
+    \item Étudiant en informatique à la TU Darmstadt avec une profonde expérience pratique en sécurité offensive.
+    \item Découvreur de 3 CVEs, distingué dans 4 Hall of Fames internationaux (État de Californie, Bureau des Affaires Indiennes, RMIT University, Mars VDP).
+    \item Top 15/454 lors du Bugcrowd BlackHat USA CTF 2024.
+    \item Recherche un poste de stagiaire (Werkstudent) en Test d'Intrusion ou Recherche de Vulnérabilités (15--20h/semaine, région de Darmstadt/Francfort).
+\end{itemize}
+\medskip
+
+\cvsection{Expérience Professionnelle}
+
+    \company{HackerOne, Bugcrowd, Riseguard \& Balgo}{Chercheur en Sécurité Indépendant}{Remote}{Fév. 2023 -- Présent}
+    \begin{itemize}
+        \item Découverte de vulnérabilités critiques : SQL Injection $\rightarrow$ RCE (NT AUTHORITY\textbackslash{}SYSTEM) sur une plateforme gouvernementale, IDOR, failles de logique métier, élévation de privilèges, Account Takeover.
+        \item \textbf{CVE-2024-29643} : Host Header Injection dans Croogo CMS (découverte et publication).
+        \item \textbf{CVE-2026-25050} : Authentication Timing Attack dans Vendure permettant l'énumération de noms d'utilisateurs.
+        \item \textbf{Contributions communautaires} : Publication de PoCs et templates Nuclei officiellement adoptés par ProjectDiscovery ; co-développement de PoCs pour OpenSSH 9.1 (CVE-2023-25136) et WordPress Bricks.
+        \item \textbf{Sécurité Compétitive} : Top 15/454 -- Bugcrowd BlackHat USA CTF 2024 ; participation active à des CTF internationaux.
+    \end{itemize}
+
+\smallskip
+\dividergray
+\smallskip
+
+    \company{Fovu Security}{Pentester Freelance}{Paris, France}{Nov. 2024 -- Déc. 2024}
+    \begin{itemize}
+        \item Réalisation d'un test d'intrusion complet pour une entreprise FinTech (Black-Box \& Gray-Box).
+        \item Gestion du cycle complet : Kick-off client, configuration réseau, analyse de vulnérabilités.
+        \item \textbf{Reporting} : Rédaction de rapports techniques détaillés et de synthèses managériales avec présentation des résultats.
+    \end{itemize}
+
+\medskip
+
+\cvsection{Projets}
+
+    \project{CipherBuster -- RSA Exploitation Framework}{Open Source}{Auteur}{Python}
+    \begin{itemize}
+        \item Développement d'un framework pour l'analyse et l'exploitation de clés RSA faibles (attaques par factorisation, détection de clés vulnérables).
+    \end{itemize}
+
+\smallskip
+\dividergray
+\smallskip
+
+    \project{Infiltrator -- Red Team Monitoring}{Open Source}{Développeur}{Go}
+    \begin{itemize}
+        \item Outil de recherche en sécurité pour la capture d'entrées, de captures d'écran et de données système ; exfiltration sécurisée via un bot Telegram.
+    \end{itemize}
+
+\medskip
+
+\cvsection{Distinctions \& Hall of Fames}
+    \cvachievement{\faTrophy}{{\bfseries 1er Place par équipe -- usd Hacking Night} \hfill {\color{accent}\faCalendar} \hspace{0.5em}{Nov. 2025}}{Victoire lors de la compétition organisée par usd AG.}
+    \cvachievement{\faTrophy}{{\bfseries Hall of Fame -- Mars Vulnerability Disclosure Program} \hfill {\color{accent}\faCalendar} \hspace{0.5em}{Août 2025}}{Reconnaissance pour la découverte d'une vulnérabilité de logique métier critique.}
+    \cvachievement{\faTrophy}{{\bfseries Hall of Fame -- State of California (Bugcrowd)} \hfill {\color{accent}\faCalendar} \hspace{0.5em}{Jan. 2024}}{Signalement d'une injection SQL sur une plateforme publique.}
+    \cvachievement{\faTrophy}{{\bfseries Hall of Fames Internationaux}}{Université RMIT (Oct. 2023), Bureau of Indian Affairs (Fév. 2023).}
+
+\medskip
+
+\cvsection{Compétences \& Outils}
+\begin{itemize}
+    \item \textbf{Penetration Testing :} Web, API, Active Directory, Réseau
+    \item \textbf{Outils :} Burp Suite, Nmap, Metasploit, Wireshark, Nuclei, Ghidra, Frida
+    \item \textbf{Programmation :} Python, Go, C, Java, LaTeX | \textbf{OS :} Linux, Windows
+    \item \textbf{Langues :} Français (Maternel), Allemand (C1 -- Fließend), Anglais (Courant)
+\end{itemize}
+
+\medskip
+
+\cvsection{Formation}
+    \education{B.Sc. Informatique}{Technische Universität Darmstadt}{Darmstadt, Allemagne}{Oct. 2025 -- Prévu 2028}
+    \dividergray
+    \education{DSH2 -- Examen de langue allemande pour l'accès aux études supérieures}{Technische Universität Clausthal}{Clausthal, Allemagne}{Mars 2025 -- Juil. 2025}
+
+\end{document}

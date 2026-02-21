@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:util="http://schemas.microsoft.com/wix/2008/Util">
+
+  <!--
+    OneSecCV — Windows Installer (.msi)
+    Built with WiX Toolset v3
+    Run: candle.exe OneSecCV.wxs && light.exe -ext WixUIExtension OneSecCV.wixobj
+  -->
+
+  <Product
+    Id="*"
+    Name="OneSecCV"
+    Language="1033"
+    Version="2.0.0"
+    Manufacturer="Christ Bowel"
+    UpgradeCode="A1B2C3D4-E5F6-7890-ABCD-EF1234567890">
+
+    <Package
+      InstallerVersion="500"
+      Compressed="yes"
+      InstallScope="perMachine"
+      Description="OneSecCV — AI-Powered CV Generator"
+      Comments="Generates professional PDF CVs using AI and LaTeX."
+      Manufacturer="Christ Bowel"
+      Keywords="CV, Resume, AI, LaTeX, PDF"/>
+
+    <!-- ── Allow clean upgrades ── -->
+    <MajorUpgrade
+      DowngradeErrorMessage="A newer version of OneSecCV is already installed."
+      Schedule="afterInstallInitialize"/>
+
+    <MediaTemplate EmbedCab="yes"/>
+
+    <!-- ── Icons ── -->
+    <Icon Id="OneSecCVIcon" SourceFile="..\logo.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="OneSecCVIcon"/>
+    <Property Id="ARPHELPLINK"    Value="https://github.com/YOUR_USERNAME/oneseccv"/>
+    <Property Id="ARPURLINFOABOUT" Value="https://github.com/YOUR_USERNAME/oneseccv"/>
+
+    <!-- ── UI: Welcome → License → InstallDir → Desktop shortcut → Install ── -->
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER"/>
+    <UIRef Id="WixUI_InstallDir"/>
+
+    <!-- Custom license RTF -->
+    <WixVariable Id="WixUILicenseRtf" Value="license.rtf"/>
+
+    <!-- Optional: custom banner / dialog bitmaps
+    <WixVariable Id="WixUIBannerBmp"   Value="assets\banner.bmp"/>
+    <WixVariable Id="WixUIDialogBmp"   Value="assets\dialog.bmp"/>
+    -->
+
+    <!-- ── Directory structure ── -->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="OneSecCV">
+          <Directory Id="TemplatesFolder"        Name="templates"/>
+          <Directory Id="TemplatePreviewsFolder" Name="template_previews"/>
+        </Directory>
+      </Directory>
+
+      <!-- Start Menu -->
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="OneSecCV"/>
+      </Directory>
+
+      <!-- Desktop -->
+      <Directory Id="DesktopFolder" Name="Desktop"/>
+    </Directory>
+
+    <!-- ── Features ── -->
+    <Feature Id="ProductFeature" Title="OneSecCV" Level="1">
+      <ComponentGroupRef Id="AppComponents"/>
+      <ComponentGroupRef Id="TemplateComponents"/>
+      <ComponentGroupRef Id="PreviewComponents"/>
+      <ComponentRef      Id="StartMenuShortcut"/>
+      <ComponentRef      Id="DesktopShortcut"/>
+    </Feature>
+
+    <!-- ── Main files ── -->
+    <ComponentGroup Id="AppComponents" Directory="INSTALLFOLDER">
+      <Component Id="MainExecutable" Guid="B1C2D3E4-F5A6-7890-BCDE-F12345678901">
+        <File Id="OneSecCVExe"
+              Source="..\build\bin\OneSecCV.exe"
+              Name="OneSecCV.exe"
+              KeyPath="yes"/>
+      </Component>
+    </ComponentGroup>
+
+    <!-- ── Templates ── -->
+    <ComponentGroup Id="TemplateComponents" Directory="TemplatesFolder">
+      <Component Id="TplJake"      Guid="C1D2E3F4-A5B6-7890-CDEF-123456789012">
+        <File Source="..\templates\jake.tex"       Name="jake.tex"       KeyPath="yes"/>
+      </Component>
+      <Component Id="TplElegant"   Guid="D1E2F3A4-B5C6-7890-DEF0-234567890123">
+        <File Source="..\templates\elegant.tex"    Name="elegant.tex"    KeyPath="yes"/>
+      </Component>
+      <Component Id="TplRender"    Guid="E1F2A3B4-C5D6-7890-EF01-345678901234">
+        <File Source="..\templates\render.tex"     Name="render.tex"     KeyPath="yes"/>
+      </Component>
+      <Component Id="TplSwe"       Guid="F1A2B3C4-D5E6-7890-F012-456789012345">
+        <File Source="..\templates\swe.tex"        Name="swe.tex"        KeyPath="yes"/>
+      </Component>
+      <Component Id="TplTwoColumn" Guid="A2B3C4D5-E6F7-8901-0123-567890123456">
+        <File Source="..\templates\two-column.tex" Name="two-column.tex" KeyPath="yes"/>
+      </Component>
+    </ComponentGroup>
+
+    <!-- ── Previews ── -->
+    <ComponentGroup Id="PreviewComponents" Directory="TemplatePreviewsFolder">
+      <Component Id="PrvJake"      Guid="B2C3D4E5-F6A7-8901-1234-678901234567">
+        <File Source="..\template_previews\jake.png"        Name="jake.png"        KeyPath="yes"/>
+      </Component>
+      <Component Id="PrvElegant"   Guid="C2D3E4F5-A6B7-8901-2345-789012345678">
+        <File Source="..\template_previews\elegant.png"     Name="elegant.png"     KeyPath="yes"/>
+      </Component>
+      <Component Id="PrvRender"    Guid="D2E3F4A5-B6C7-8901-3456-890123456789">
+        <File Source="..\template_previews\render.PNG"      Name="render.PNG"      KeyPath="yes"/>
+      </Component>
+      <Component Id="PrvSwe"       Guid="E2F3A4B5-C6D7-8901-4567-901234567890">
+        <File Source="..\template_previews\swe.PNG"         Name="swe.PNG"         KeyPath="yes"/>
+      </Component>
+      <Component Id="PrvTwoColumn" Guid="F2A3B4C5-D6E7-8901-5678-012345678901">
+        <File Source="..\template_previews\two-column.png"  Name="two-column.png"  KeyPath="yes"/>
+      </Component>
+    </ComponentGroup>
+
+    <!-- ── Start Menu shortcut ── -->
+    <Component Id="StartMenuShortcut" Guid="A3B4C5D6-E7F8-9012-6789-123456789012" Directory="ApplicationProgramsFolder">
+      <Shortcut Id="StartMenuShortcutLink"
+                Name="OneSecCV"
+                Description="AI-Powered CV Generator"
+                Target="[INSTALLFOLDER]OneSecCV.exe"
+                WorkingDirectory="INSTALLFOLDER"
+                Icon="OneSecCVIcon"/>
+      <RemoveFolder Id="CleanupStartMenu" Directory="ApplicationProgramsFolder" On="uninstall"/>
+      <RegistryValue Root="HKCU"
+                     Key="Software\OneSecCV"
+                     Name="StartMenuInstalled"
+                     Type="integer"
+                     Value="1"
+                     KeyPath="yes"/>
+    </Component>
+
+    <!-- ── Desktop shortcut (user can deselect) ── -->
+    <Component Id="DesktopShortcut" Guid="B3C4D5E6-F7A8-9012-7890-234567890123" Directory="DesktopFolder">
+      <Shortcut Id="DesktopShortcutLink"
+                Name="OneSecCV"
+                Description="AI-Powered CV Generator"
+                Target="[INSTALLFOLDER]OneSecCV.exe"
+                WorkingDirectory="INSTALLFOLDER"
+                Icon="OneSecCVIcon"/>
+      <RegistryValue Root="HKCU"
+                     Key="Software\OneSecCV"
+                     Name="DesktopInstalled"
+                     Type="integer"
+                     Value="1"
+                     KeyPath="yes"/>
+    </Component>
+
+  </Product>
+</Wix>

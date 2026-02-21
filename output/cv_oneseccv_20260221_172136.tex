@@ -1,0 +1,138 @@
+\documentclass[a4paper,10pt]{article}
+
+% --- PACKAGES STANDARDS (Compatibles pdflatex) ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[default]{sourcesanspro} % Charge la police sans fichiers externes
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{tabularx}
+\usepackage[margin=1cm, top=1cm]{geometry}
+\usepackage[inline]{enumitem}
+
+% --- CONFIGURATION ---
+\definecolor{UI_blue}{RGB}{32, 64, 151}
+\pagestyle{fancy}
+\fancyhf{} 
+\renewcommand{\headrulewidth}{0pt}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+
+\titleformat{\section}{\color{UI_blue}\scshape\raggedright\large}{}{0em}{}[\vspace{-10pt}\hrulefill\vspace{-6pt}]
+
+\newcommand{\subtext}[1]{#1\par\vspace{-0.2cm}}
+\newcommand{\hskills}[1]{\textbf{#1}}
+
+\newenvironment{zitemize}{
+    \begin{itemize}[leftmargin=*, labelsep=0.5em, itemsep=0pt, parsep=1pt]
+}{\end{itemize}\vspace{-0.2cm}}
+
+\titleformat{\subsection}{\vspace{-0.1cm}\bfseries\fontsize{11pt}{12pt}\selectfont}{}{0em}{}[\vspace{-0.2cm}]
+
+\begin{document}
+
+\begin{center}
+    \begin{minipage}[b]{0.30\textwidth}
+            \large 015210303081 \\
+            \large \href{mailto:christbowel1337@gmail.com}{christbowel1337@gmail.com} 
+    \end{minipage}% 
+    \begin{minipage}[b]{0.40\textwidth}
+            \centering
+            {\Huge Christ Bowel Bouchuen} \\ 
+            \vspace{0.1cm}
+            {\color{UI_blue} \Large{Pentester \& Chercheur en Vulnérabilités}} 
+    \end{minipage}% 
+    \begin{minipage}[b]{0.30\textwidth}
+            \flushright \large 
+            \href{https://linkedin.com/in/christ-bowel-bouchuen-207a76251}{linkedin.com/in/christ-bowel-bouchuen} \\
+            \href{https://christbowel.com}{christbowel.com / GitHub}
+    \end{minipage}   
+    \vspace{0.1cm} 
+    {\color{UI_blue} \hrulefill}
+\end{center}
+
+\vspace{-0.25cm}
+\begin{center}
+    \textbullet \hspace{0.1cm} Pentest Web \& API \hspace{0.3cm}
+    \textbullet \hspace{0.1cm} Offensive Security \hspace{0.3cm}
+    \textbullet \hspace{0.1cm} Recherche de Vulnérabilités \hspace{0.3cm}
+    \textbullet \hspace{0.1cm} Bug Bounty \& CTF
+\end{center}
+
+\section{Éducation}
+\subsection*{B.Sc. en Informatique \hfill Oct. 2025 -- 2028 (Prévu)} 
+\subtext{Technische Universität Darmstadt, Allemagne}
+
+\subsection*{DSH2 -- Examen de langue allemande pour l'enseignement supérieur \hfill Mars 2025 -- Juil. 2025} 
+\subtext{Technische Universität Clausthal, Allemagne}
+
+\section{Expérience Professionnelle}
+
+\subsection*{Chercheur en Sécurité Indépendant | Joueur CTF \hfill Fév. 2023 -- Présent} 
+\subtext{HackerOne, Bugcrowd, Riseguard \& Balgo} 
+\begin{zitemize}
+    \item Découverte de vulnérabilités critiques : SQL Injection vers RCE (NT AUTHORITY\textbackslash SYSTEM) sur une plateforme gouvernementale, IDOR, failles de logique métier, élévation de privilèges et prise de contrôle de comptes (ATO).
+    \item \textbf{CVE-2024-29643} : Host Header Injection dans Croogo CMS (découverte et publication).
+    \item \textbf{CVE-2026-25050} : Attaque temporelle d'authentification dans Vendure permettant l'énumération d'utilisateurs.
+    \item Contributions communautaires : Publication de PoCs et templates Nuclei officiellement adoptés par ProjectDiscovery ; co-développement de PoCs pour OpenSSH 9.1 (CVE-2023-25136) et WordPress Bricks.
+    \item Sécurité Compétitive : Top 15/454 au Bugcrowd BlackHat USA CTF 2024 ; participation active aux compétitions CTF nationales et internationales.
+    \item Reconnaissance : Inscription multiple aux Hall of Fames (État de Californie, Bureau of Indian Affairs, Université RMIT, Mars VDP).
+\end{zitemize}
+
+\subsection*{Pentester Freelance \hfill Nov. 2024 -- Déc. 2024} 
+\subtext{Coopération avec Fovu Security \hfill Paris, France} 
+\begin{zitemize}
+    \item Réalisation d'un test d'intrusion complet pour une entreprise FinTech (approche Black-Box \& Gray-Box).
+    \item Missions : Réunion de lancement client, configuration réseau, analyse approfondie des vulnérabilités.
+    \item Reporting : Rédaction de rapports techniques détaillés et synthèses managériales, présentation orale des résultats.
+\end{zitemize}
+
+\section{Projets}
+\subsection*{CipherBuster -- Framework d'exploitation RSA \hfill Fév. 2026}
+\subtext{Framework Python pour l'analyse et l'exploitation de clés RSA faibles (attaques par factorisation, détection de clés faibles).}
+
+\subsection*{Infiltrator -- Framework de surveillance Red Team \hfill Juin 2025 -- Août 2025}
+\subtext{Outil de recherche en sécurité basé sur Go pour la capture d'entrées, captures d'écran et données système ; exfiltration sécurisée via bot Telegram.}
+
+\subsection*{CVE-2024-25600 -- PoC \& Template Nuclei Officiel \hfill 2024}
+\subtext{Développement et publication d'un template Nuclei pour la détection de la CVE-2024-25600, adopté par ProjectDiscovery.}
+
+\section{Compétences \& Outils}
+\begin{tabular}{>{\raggedright\arraybackslash}p{10em} p{38em}}
+    \hskills{Pentesting:} & Web, API, Active Directory, Réseau \\
+    \hskills{Outils:} & Burp Suite, Nmap, Metasploit, Wireshark, Nuclei, Ghidra, Frida \\
+    \hskills{Programmation:} & Python, Go, C, Java, \LaTeX \\
+    \hskills{Systèmes d'exploitation:} & Linux, Windows \\
+\end{tabular}
+
+\section{Certifications}
+\begin{zitemize}
+    \item \textbf{usd Hacking Night} -- Ethical Hacking Skills (usd AG, Nov. 2025)
+    \item \textbf{Certified AppSec Practitioner (CAP)} -- The SecOps Group (Fév. 2023)
+    \item \textbf{API Security Penetration Testing} -- APIsec University (Jan. 2024)
+    \item \textbf{CompTIA PenTest+ Learning Path} -- TryHackMe (Avr. 2023)
+    \item \textbf{AZ-500: Sécurisation des données et applications} -- Microsoft (Avr. 2023)
+\end{zitemize}
+
+\section{Distinctions \& Hall of Fames}
+\begin{zitemize}
+    \item \textbf{1ère place par équipe} -- usd Hacking Night (usd AG), Nov. 2025
+    \item \textbf{Hall of Fame} -- Mars Vulnerability Disclosure Program (VDP), Août 2025
+    \item \textbf{Hall of Fame} -- État de Californie (via Bugcrowd), Jan. 2024 -- SQL Injection sur plateforme publique
+    \item \textbf{Hall of Fame} -- Université RMIT (Oct. 2023) et Bureau of Indian Affairs (Fév. 2023)
+\end{zitemize}
+
+\section{Langues \& Intérêts}
+\begin{tabular}{>{\raggedright\arraybackslash}p{10em} p{38em}}
+    \hskills{Langues:} & Français (Maternel), Allemand (Courant, C1), Anglais (Courant) \\
+    \hskills{Intérêts:} & Compétitions CTF, Bug Bounty, Outils Open Source, Échecs (Membre du club TU Darmstadt), Fitness \\
+\end{tabular}
+
+\end{document}

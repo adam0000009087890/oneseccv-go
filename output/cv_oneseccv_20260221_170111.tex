@@ -1,0 +1,210 @@
+\documentclass[10pt, a4paper]{article}
+
+% --- PACKAGES ---
+\usepackage[left=1.2cm,right=1.2cm,top=1.2cm,bottom=1.2cm]{geometry}
+\usepackage[default]{lato}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{fontawesome}
+\usepackage{dashrule}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{multirow,tabularx}
+\usepackage{xparse}
+\usepackage{graphicx}
+
+% Couleurs
+\definecolor{VividPurple}{HTML}{2E64FE}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{555555}
+\definecolor{AzureRadiance}{HTML}{00ABFF}
+\definecolor{DodgerBlue}{HTML}{4F83FF}
+\definecolor{ElectricViolet}{HTML}{9F00FF}
+\definecolor{Black}{HTML}{000000}
+
+\colorlet{accent}{DodgerBlue}
+\colorlet{body}{Black!80}
+
+% Macros de contact
+\newcommand{\printinfo}[2]{\mbox{\textcolor{accent}{#1}\hspace{0.5em}#2\hspace{2em}}}
+\newcommand{\mailaddress}[1]{\printinfo{\faEnvelope}{#1}}
+\newcommand{\phone}[1]{\printinfo{\faPhone}{#1}}
+\newcommand{\location}[1]{\printinfo{\faMapMarker}{#1}}
+\newcommand{\linkedin}[1]{\printinfo{\faLinkedin}{#1}}
+\newcommand{\github}[1]{\printinfo{\faGithub}{#1}}
+\newcommand{\homepage}[1]{\printinfo{\faGlobe}{#1}}
+
+% Variables d'en-tête
+\makeatletter
+\newcommand{\name}[1]{\def\@name{#1}}
+\newcommand{\tagline}[1]{\def\@tagline{#1}}
+\newcommand{\personalinfo}[1]{\def\@personalinfo{#1}}
+
+\newcommand{\makecvheader}{%
+  \begingroup \centering
+    {\Large\bfseries\color{black}\textls[250]{\MakeUppercase{\@name}}\par}
+    \smallskip
+    {\normalsize\bfseries\color{accent}\textls[340]{\MakeUppercase{\@tagline}}\par}
+    \smallskip
+    {\centering\footnotesize\bfseries\@personalinfo\par}
+  \endgroup\smallskip
+}
+\makeatother
+
+% Sections et Dividers
+\setlength{\parindent}{0pt}
+\newcommand{\divider}{\medskip\textcolor{accent}{\hdashrule{\linewidth}{0.8pt}{0.5ex}}\bigskip}
+\newcommand{\dividergray}{\textcolor{body!50}{\hdashrule{\linewidth}{0.4pt}{0.5ex}}\smallskip}
+
+\newcommand{\cvsection}[1]{%
+  \bigskip%
+  {\color{accent}\small\bfseries\textls[250]{\MakeUppercase{#1}}}\\[-1ex]%
+  {\color{accent}\rule{\linewidth}{1.2pt}\par}\medskip
+}
+
+% Listes
+\newcommand{\itemmarker}{\color{accent}\small\textbullet}
+\newcommand{\dashedbullets}{\color{accent}\small\textendash}
+\setlist{leftmargin=*,labelsep=0.8em,nosep,itemsep=0.15\baselineskip,after=\vskip0.15\baselineskip,before=\vskip0.15\baselineskip}
+\setlist[itemize]{label=\itemmarker}
+
+% Expérience et Education
+\newcommand{\company}[4]{%
+\smallskip
+    {\small\color{body}\textls[140]{\textbf{\MakeUppercase{#1}}}} \hfill {\small\color{body}\textls[140]{\textbf{\MakeUppercase{#2}}}} \par
+    \smallskip
+    {\color{accent}\faMapMarker} \hspace{0.5em}{\color{body}{#3}} \hfill {\color{accent}\faCalendar} \hspace{0.5em}{\color{body}{#4}} \par
+    \smallskip
+}
+
+\newcommand{\project}[4]{%
+\bigskip
+    \textbf{Project:} #1 \hfill \textbf{Website/Repo:} #2\par\smallskip
+    \textbf{Role:} #3 \hfill \textbf{Technologies:} {#4}\par\smallskip
+    \textbf{Highlights:}\par\smallskip
+}
+
+\newcommand{\education}[4]{%
+\smallskip
+    {\small\color{body}\textls[140]{{\MakeUppercase{#1}}}} \\
+    {\small\textls[140]{{{#2}}}} \hfill {\color{accent}\faCalendar} \hspace{0.5em}{{#4}} \par
+}
+
+\newcommand{\cvachievement}[3]{%
+  \begin{tabularx}{\linewidth}{@{}p{2em} @{\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
+  \multirow{2}{*}{\Large\color{accent}#1} & {#2}\\
+  & #3
+  \end{tabularx}%
+  \smallskip
+}
+
+\pagestyle{empty}
+\color{body}
+
+\begin{document}
+
+
+
+\name{Christ-Bowel Bouchuen} 
+\tagline{Informatics Student \textbullet{} Offensive Security Researcher} 
+\personalinfo{%
+    \mailaddress{christbowel1337@gmail.com}
+    \phone{015210303081}
+    \location{Darmstadt / Frankfurt, Germany}
+    \linkedin{linkedin.com/in/christ-bowel-bouchuen-207a76251}
+    \homepage{christbowel.com}
+}
+
+\makecvheader
+\medskip
+
+\cvsection{Profile}
+\begin{itemize}
+    \item Computer Science student at TU Darmstadt with deep practical experience in Offensive Security.
+    \item Discoverer of 3 CVEs, recognized in 4 international Hall of Fames (State of California, Bureau of Indian Affairs, RMIT University, Mars VDP).
+    \item Top 15/454 at the Bugcrowd BlackHat USA CTF 2024.
+    \item Currently seeking a working student position (15--20 hours/week) in Penetration Testing or Vulnerability Research in the Darmstadt/Frankfurt area.
+\end{itemize}
+\medskip
+
+\cvsection{Professional Experience}
+
+    \company{Independent Security Researcher / CTF Player}{HackerOne, Bugcrowd, Riseguard \& Balgo}{Remote}{Feb 2023 -- Present}
+    \begin{itemize}
+        \item Discovered critical vulnerabilities including SQL Injection leading to RCE (NT AUTHORITY\textbackslash{}SYSTEM) on a government platform, IDOR, Business Logic Flaws, Privilege Escalation, and Account Takeover.
+        \item \textbf{CVE-2024-29643:} Discovered and published Host Header Injection in Croogo CMS.
+        \item \textbf{CVE-2026-25050:} Discovered and published Authentication Timing Attack in Vendure enabling username enumeration.
+        \item \textbf{Community Contributions:} Developed PoCs and Nuclei templates officially merged by ProjectDiscovery; contributed to PoCs for OpenSSH 9.1 (CVE-2023-25136) and WordPress Bricks.
+        \item \textbf{Competitive Security:} Ranked Top 15/454 at Bugcrowd BlackHat USA CTF 2024; active participation in national and international CTF competitions.
+    \end{itemize}
+
+\smallskip
+\divider
+\smallskip
+
+    \company{Fovu Security}{Freelance Penetration Tester}{Paris, France (Remote)}{Nov 2024 -- Dec 2024}
+    \begin{itemize}
+        \item Conducted a full Penetration Test for a FinTech company using Black-Box and Gray-Box methodologies.
+        \item Managed client kick-off meetings, network configuration, and vulnerability analysis.
+        \item Reporting: Authored technical final reports and management summaries, and presented results to stakeholders.
+    \end{itemize}
+
+\medskip
+
+\cvsection{Projects}
+    \project{CipherBuster -- RSA Exploitation Framework}{github.com/Christbowel/CipherBuster}{Lead Developer}{Python}
+    \begin{itemize}
+        \item Python framework designed for the analysis and exploitation of weak RSA keys (Factorization Attacks, Weak Key Detection).
+    \end{itemize}
+
+    \project{Infiltrator -- Red Team Input Monitoring}{github.com/Christbowel/Infiltrator}{Lead Developer}{Go}
+    \begin{itemize}
+        \item Go-based security research tool for capturing inputs, screenshots, and system data with secure exfiltration via Telegram bot.
+    \end{itemize}
+
+    \project{CVE-2024-25600 Nuclei Template}{github.com/Christbowel/CVE-2024-25600\_Nuclei}{Researcher}{YAML}
+    \begin{itemize}
+        \item Developed and published the official Nuclei template for the detection of CVE-2024-25600, adopted by ProjectDiscovery in 2024.
+    \end{itemize}
+
+\medskip
+
+\cvsection{Certifications \& Awards}
+    \cvachievement{\faTrophy}{{\bfseries 1st Place - usd Hacking Night} \hfill {\color{accent}\faCalendar} \hspace{0.5em}{Nov 2025}}
+    {Team award for ethical hacking excellence, hosted by usd AG.}
+    
+    \smallskip 
+    \dividergray
+    \smallskip
+    
+    \cvachievement{\faCertificate}{{\bfseries Certified AppSec Practitioner (CAP)} \hfill {\color{accent}\faCalendar} \hspace{0.5em}{Feb 2023}}
+    {The SecOps Group - Application security proficiency.}
+
+    \smallskip 
+    \dividergray
+    \smallskip
+
+    \cvachievement{\faUniversity}{{\bfseries International Hall of Fames} \hfill {\color{accent}\faCalendar} \hspace{0.5em}{2023 -- 2025}}
+    {State of California (SQLi), Mars VDP (Business Logic), Bureau of Indian Affairs, and RMIT University.}
+
+\medskip
+
+\cvsection{Education}
+    \education{B.Sc. Informatics}{Technische Universität Darmstadt}{Darmstadt, Germany}{Oct 2025 -- Expected 2028}
+    \dividergray
+    \education{DSH2 German Language Exam for University Entrance}{Technische Universität Clausthal}{Clausthal, Germany}{Mar 2025 -- July 2025}
+
+\medskip
+
+\cvsection{Skills \& Languages}
+\begin{itemize}
+    \item \textbf{Penetration Testing:} Web, API, Active Directory, Network, Vulnerability Research.
+    \item \textbf{Tools:} Burp Suite, Nmap, Metasploit, Wireshark, Nuclei, Ghidra, Frida, LaTeX.
+    \item \textbf{Programming:} Python, Go, C, Java \textbullet{} \textbf{OS:} Linux, Windows.
+    \item \textbf{Languages:} French (Native), German (Fluent - C1), English (Fluent).
+    \item \textbf{Interests:} CTF Competitions, Bug Bounty, Chess (TU Darmstadt Chess Club), Fitness.
+\end{itemize}
+
+\end{document}

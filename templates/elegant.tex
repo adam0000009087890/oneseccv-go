@@ -1,0 +1,182 @@
+\documentclass[10pt, a4paper]{article}
+
+% --- PACKAGES ---
+\usepackage[left=1.2cm,right=1.2cm,top=1.2cm,bottom=1.2cm]{geometry}
+\usepackage[default]{lato}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{fontawesome}
+\usepackage{dashrule}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{multirow,tabularx}
+\usepackage{xparse}
+\usepackage{graphicx} % Essentiel pour les images/couleurs
+
+% Couleurs
+\definecolor{VividPurple}{HTML}{2E64FE}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{555555}
+\definecolor{AzureRadiance}{HTML}{00ABFF}
+\definecolor{DodgerBlue}{HTML}{4F83FF}
+\definecolor{ElectricViolet}{HTML}{9F00FF}
+\definecolor{Black}{HTML}{000000}
+
+\colorlet{accent}{DodgerBlue}
+\colorlet{body}{Black!80}
+
+% Macros de contact
+\newcommand{\printinfo}[2]{\mbox{\textcolor{accent}{#1}\hspace{0.5em}#2\hspace{2em}}}
+\newcommand{\mailaddress}[1]{\printinfo{\faEnvelope}{#1}}
+\newcommand{\phone}[1]{\printinfo{\faPhone}{#1}}
+\newcommand{\location}[1]{\printinfo{\faMapMarker}{#1}}
+\newcommand{\linkedin}[1]{\printinfo{\faLinkedin}{#1}}
+
+% Variables d'en-tête
+\makeatletter
+\newcommand{\name}[1]{\def\@name{#1}}
+\newcommand{\tagline}[1]{\def\@tagline{#1}}
+\newcommand{\personalinfo}[1]{\def\@personalinfo{#1}}
+
+\newcommand{\makecvheader}{%
+  \begingroup \centering
+    {\Large\bfseries\color{black}\textls[250]{\MakeUppercase{\@name}}\par}
+    \smallskip
+    {\normalsize\bfseries\color{accent}\textls[340]{\MakeUppercase{\@tagline}}\par}
+    \smallskip
+    {\centering\footnotesize\bfseries\@personalinfo\par}
+  \endgroup\smallskip
+}
+\makeatother
+
+% Sections et Dividers
+\setlength{\parindent}{0pt}
+\newcommand{\divider}{\medskip\textcolor{accent}{\hdashrule{\linewidth}{0.8pt}{0.5ex}}\bigskip}
+\newcommand{\dividergray}{\textcolor{body!50}{\hdashrule{\linewidth}{0.4pt}{0.5ex}}\smallskip}
+
+\newcommand{\cvsection}[1]{%
+  \bigskip%
+  {\color{accent}\small\bfseries\textls[250]{\MakeUppercase{#1}}}\\[-1ex]%
+  {\color{accent}\rule{\linewidth}{1.2pt}\par}\medskip
+}
+
+% Listes
+\newcommand{\itemmarker}{\color{accent}\small\textbullet}
+\newcommand{\dashedbullets}{\color{accent}\small\textendash}
+\setlist{leftmargin=*,labelsep=0.8em,nosep,itemsep=0.15\baselineskip,after=\vskip0.15\baselineskip,before=\vskip0.15\baselineskip}
+\setlist[itemize]{label=\itemmarker}
+
+% Expérience et Education
+\newcommand{\company}[4]{%
+\smallskip
+    {\small\color{body}\textls[140]{\textbf{\MakeUppercase{#1}}}} \hfill {\small\color{body}\textls[140]{\textbf{\MakeUppercase{#2}}}} \par
+    \smallskip
+    {\color{accent}\faMapMarker} \hspace{0.5em}{\color{body}{#3}} \hfill {\color{accent}\faCalendar} \hspace{0.5em}{\color{body}{#4}} \par
+    \smallskip
+}
+
+\newcommand{\project}[4]{%
+\bigskip
+    \textbf{Project:} #1 \hfill \textbf{Client:} #2\par\smallskip
+    \textbf{Role(s):} #3 \hfill \textbf{Technologies:} {#4}\par\smallskip
+    \textbf{Responsibilities:}\par\smallskip
+}
+
+\newcommand{\education}[4]{%
+\smallskip
+    {\small\color{body}\textls[140]{{\MakeUppercase{#1}}}} \\
+    {\small\textls[140]{{{#2}}}} \hfill {\color{accent}\faCalendar} \hspace{0.5em}{{#4}} \par
+}
+
+\newcommand{\cvachievement}[3]{%
+  \begin{tabularx}{\linewidth}{@{}p{2em} @{\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
+  \multirow{2}{*}{\Large\color{accent}#1} & {#2}\\
+  & #3
+  \end{tabularx}%
+  \smallskip
+}
+
+\pagestyle{empty}
+\color{body}
+
+\begin{document}
+
+%% PHOTO_PLACEHOLDER
+
+\name{Harikrishnan Balakrishna Kurup} 
+\tagline{Software Engineer $\bullet$ Technical Lead} 
+\personalinfo{%
+    \mailaddress{hbk.random@gmail.com}
+    \phone{+91-1234512345}
+    \location{Hyderabad, India}
+    \linkedin{linkedin.com/in/haribkurup}
+}
+
+\makecvheader
+\medskip
+
+\cvsection{Profile}
+\begin{itemize}
+    \item Accomplished professional with experience in programming and scripting languages.
+    \item Highly motivated and logically sound team player with an appetite for learning new technologies.
+    \item Skilled in building solutions and experienced in domains like Cloud, Fintech, and AI.
+\end{itemize}
+\medskip
+
+\cvsection{Summary Of Experience}
+\begin{itemize}
+    \item Have worked in both service based and product based companies, startups as well as MNCs.
+        \begin{itemize}[label=\dashedbullets]
+            \item Service based: Company 1, Company 2
+            \item Product based: Company 1 (client side)
+        \end{itemize}
+    \item Experience in working with and leading geographically separated teams.
+\end{itemize}
+
+\medskip
+
+\cvsection{Professional Experience}
+
+    \company{ABC Technologies}{Senior Technical Consultant}{Hyderabad, India}{May 2019 -- Till now}
+    \project{EIQ Product Suite}{WhamTech Inc}{Software Engineer}{C++, PostgreSQL, SVN, JIRA}
+    
+    \begin{itemize}
+        \item Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        \item Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    \end{itemize}
+
+\smallskip
+\divider
+\smallskip
+
+    \company{XYZ Enterprises}{Technical Lead}{Mumbai, India}{Feb 2018 -- Apr 2019}
+    \project{GreenRocket Security}{Network Marvels}{Lead Engineer}{Python, Swift, PostgreSQL}
+    
+    \begin{itemize}
+        \item Leo integer malesuada nunc vel risus. Nunc vel risus commodo viverra maecenas. 
+        \item Nulla posuere sollicitudin aliquam ultrices sagittis.
+    \end{itemize}
+
+\medskip
+
+\cvsection{Awards}
+    \cvachievement{\faTrophy}{{\bfseries IIFA - Team Of The Quarter} \hfill {\color{accent}\faCalendar} \hspace{0.5em}{Jul 2013}}
+    {Received this award for excellence in software delivery and team management.}
+    
+    \smallskip 
+    \dividergray
+    \smallskip
+    
+    \cvachievement{\faTrophy}{{\bfseries Oscar - Achiever Of The Quarter} \hfill {\color{accent}\faCalendar} \hspace{0.5em}{Jul 2015}}
+    {Recognized for outstanding technical leadership during the Q3 migration project.}
+
+\medskip
+
+\cvsection{Education}
+    \education{Bachelor of Engineering (Computer)}{University of Mumbai}{Navi Mumbai, India}{2022}
+    \dividergray
+    \education{HSC, CBSE Board}{Kendriya Vidyalaya}{Mumbai, India}{2018}
+
+\end{document}
