@@ -1,11 +1,11 @@
-# OneSecCV — AI-Powered CV Generator
+# OneSecCV - AI-Powered CV Generator
 
 <div align="center">
 
 **Generate a professional, LaTeX-quality CV in seconds using AI.**  
 Built with Go, Wails v2, React, and Tailwind CSS.
 
-[![Build](https://github.com/YOUR_USERNAME/oneseccv/actions/workflows/build.yml/badge.svg)](https://github.com/YOUR_USERNAME/oneseccv/actions)
+[![Build](https://github.com/christbowel/oneseccv/actions/workflows/build.yml/badge.svg)](https://github.com/christbowel/oneseccv/actions)
 ![Go Version](https://img.shields.io/badge/Go-1.21+-00ADD8?logo=go)
 ![Wails](https://img.shields.io/badge/Wails-v2.11-red)
 ![Platform](https://img.shields.io/badge/Platform-Windows-blue?logo=windows)
@@ -198,7 +198,7 @@ MIT License — see [LICENSE](LICENSE) for details.
 ## 👨‍💻 Author
 
 **Christ Bowel**  
-OneSecCV v2.0 — AI Engine Edition
+OneSecCV v2.0 - AI Engine Edition
 
 ---
 
