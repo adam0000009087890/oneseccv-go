@@ -1,0 +1,36 @@
+# Go
+*.exe
+*.dll
+*.so
+*.dylib
+bin/
+build/bin/
+
+# Wails
+frontend/dist/
+frontend/node_modules/
+
+# Installer artifacts
+installer/*.wixobj
+installer/*.wixpdb
+installer/*.msi
+
+# Output CV files
+output/
+
+# API key
+.env
+
+# Go workspace
+go.work
+go.work.sum
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
